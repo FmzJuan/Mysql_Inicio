@@ -1,0 +1,105 @@
+MYsql comandos
+
+para baixar mysql ir ao site oficial e baixar o workbench.
+para se preparar para um ambiemte mysql temos que ter um servidor e  que estou utilizando e o wampserver.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+antes de tudo temos que abrir um banco de dados da para criar e usar ele com (use cadostro;)
+banco de dados contem tabelas-tabelas contem registros-registros sao compostos por campos
+agora irei apreder como usar
+
+criando um banco de dados comandos = create database qualquernome; 
+criando tabelas comandos = create table qualquernme;
+
+
+use cadastro;
+describe cursos;
+describe gafanhotos;
+
+select * from cursos;
+select * from gafanhotos;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tipos primitivos em mysql
+
+numerico->inteiro;(TinyInt,SmallInt,int,MediumInt,BigInt), real;(decimal,float,cdouble,real),  logico;(bit,bolean)
+
+data/tempo->;(Date,DateTime,TimeStamp,Time,Year)
+
+literal->caracteres;(char,varchar),textos;(tinytext,text,mediumtext,longtext),binarios;(blob,tinyblob,mediumblob,longblob),coleçoes;(enum,set)
+
+espacial->geometry,point,polygon,multipolygon
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+drop database cadastro; = apagar banco de dados
+collation definisao de caracteres ->default collate utf8_general_ci
+constraints(regras-elas ficam em azul)-->default character set utf8 , default collate utf8_general_ci
+
+altoconstrande se fiz o cadastro da pessoa um altomaticamente a proxima pessoa sera a 2 e assim em diante
+
+
+primary key(id)= para definir uma chave primaria para o id  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+quando cramos uma create table estamos fazendo uma 'ddl' que significa 'data definition languege' ->crate fatabese,create table,alter table,drop table(apaga os dados e as estruturas das tabelas)
+
+dml 'data manipulation languege'-->insert into,update,delete,truncate(apaga os dados e deixa a estrutura)
+
+
+
+insert into serve para inserir dados e manipular dados
+para ver os dados inseridos clocamos o select * from pessoas
+
+------------------------------------------------------------------------------------------------------------------------------------------
+desc pessoas; para descrever 
+
+
+drop table cursos; -->para apagar uma tabela inteira, sem o alter table 
+unique
+
+----------------------------------------------------------------------------------------------------------------------------------------
+UPDATE(modificar uma linha,), DELETE(deletar linhas da tabela) e TRUNCATE(apagar todas as linhas da tabela)
+
+
+safe updade no config edit do workbant
+
+select *from gafanhotos;
+
+select * from cursos;
+
+insert into cursos value
+('1','html4','curso de html5','40','37','2014'),
+('2','algoritimos','logica de programasao','20','15','2014'),
+('3','photoshop','dicas de photoshop cc','10','8','2014'),
+('4','pgp','curso de php para iniciantes','40','20','2010'),
+('5','jarva','intodusao a linguagem java','10','29','2000'),
+('6','mysql','banco de dados mysql','30','15','2016'),
+('7','word','curso completo de word','40','30','2016'),
+('8','sapateado','danças ritimicas','40','30','2018'),
+('9','cozinha arabe','aprenda a fazer kibe','40','37','2018'),
+('10','youtube','gerar polemicca e ganhar inscritos','5','2','2018');
+
+select * from cursos;
+
+update cursos
+set nome = 'html5'
+where idcurso =1;
+
+update cursos 
+set nome= 'php', ano = '2015'
+where idcurso = '4';
+
+update cursos
+set nome = 'Java',carga= '40',ano ='2015'
+where idcurso='5'
+limit 1;
+
+update cursos
+set ano = '2050',carga='0'
+where ano = '2018'
+limit 1;
+
+delete from cursos
+where idcurso='8';
+
+delete from cursos
+where ano='2050'
+limit 2;
+
+truncate table cursos; 

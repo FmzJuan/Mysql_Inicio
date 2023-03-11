@@ -1,5 +1,0 @@
-para praicar programaçao
-codewars (bom de mais)
-leetcode(bom para entrevistas)
-hackerRank(empresas usam para entrevistas tecnicas)
-onlinejudge.org
